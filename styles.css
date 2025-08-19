@@ -1241,7 +1241,8 @@ body {
 .service-hero .hero-overlay,
 .about-hero .hero-overlay,
 .contact-hero .hero-overlay,
-.location-hero .hero-overlay {
+.location-hero .hero-overlay,
+.hero-overlay {
     background: linear-gradient(135deg, rgba(12, 74, 110, 0.8) 0%, rgba(2, 132, 199, 0.6) 100%);
 }
 
