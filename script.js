@@ -456,8 +456,97 @@ class Utils {
     }
 }
 
+// Testimonial Carousel Manager Class
+class TestimonialCarouselManager {
+    constructor() {
+        this.carousel = document.querySelector('.testimonial-carousel');
+        this.slides = document.querySelectorAll('.testimonial-slide');
+        this.dots = document.querySelectorAll('.dot');
+        this.prevBtn = document.querySelector('.prev-btn');
+        this.nextBtn = document.querySelector('.next-btn');
+        this.currentSlide = 0;
+        this.autoSlideInterval = null;
+        
+        this.init();
+    }
+
+    init() {
+        if (!this.carousel) return;
+        
+        this.setupEventListeners();
+        this.startAutoSlide();
+    }
+
+    setupEventListeners() {
+        // Previous button
+        this.prevBtn.addEventListener('click', () => {
+            this.goToSlide(this.currentSlide - 1);
+            this.resetAutoSlide();
+        });
+
+        // Next button
+        this.nextBtn.addEventListener('click', () => {
+            this.goToSlide(this.currentSlide + 1);
+            this.resetAutoSlide();
+        });
+
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                this.goToSlide(index);
+                this.resetAutoSlide();
+            });
+        });
+
+        // Pause auto-slide on hover
+        this.carousel.addEventListener('mouseenter', () => {
+            this.stopAutoSlide();
+        });
+
+        this.carousel.addEventListener('mouseleave', () => {
+            this.startAutoSlide();
+        });
+    }
+
+    goToSlide(slideIndex) {
+        // Handle wraparound
+        if (slideIndex >= this.slides.length) {
+            slideIndex = 0;
+        } else if (slideIndex < 0) {
+            slideIndex = this.slides.length - 1;
+        }
+
+        // Remove active class from current slide and dot
+        this.slides[this.currentSlide].classList.remove('active');
+        this.dots[this.currentSlide].classList.remove('active');
+
+        // Add active class to new slide and dot
+        this.currentSlide = slideIndex;
+        this.slides[this.currentSlide].classList.add('active');
+        this.dots[this.currentSlide].classList.add('active');
+    }
+
+    startAutoSlide() {
+        this.autoSlideInterval = setInterval(() => {
+            this.goToSlide(this.currentSlide + 1);
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    stopAutoSlide() {
+        if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = null;
+        }
+    }
+
+    resetAutoSlide() {
+        this.stopAutoSlide();
+        this.startAutoSlide();
+    }
+}
+
 // Main Application Class
-class VertexPlumbingApp {
+class TickTockPlumbingApp {
     constructor() {
         this.components = {};
         this.init();
@@ -482,11 +571,12 @@ class VertexPlumbingApp {
             this.components.scrollAnimation = new ScrollAnimationManager();
             this.components.smoothScroll = new SmoothScrollManager();
             this.components.projectGallery = new ProjectGalleryManager();
+            this.components.testimonialCarousel = new TestimonialCarouselManager();
 
             // Add loading complete class
             document.body.classList.add('loaded');
 
-            console.log('Vertex Plumbing website initialized successfully');
+            console.log('TickTock Plumbing website initialized successfully');
         } catch (error) {
             console.error('Error initializing website components:', error);
         }
@@ -499,7 +589,7 @@ class VertexPlumbingApp {
 }
 
 // Initialize the application
-const app = new VertexPlumbingApp();
+const app = new TickTockPlumbingApp();
 
 // Export for potential external use
-window.VertexPlumbingApp = app;
+window.TickTockPlumbingApp = app;
