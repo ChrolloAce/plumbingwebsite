@@ -1019,7 +1019,7 @@ body {
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
-        top: -100%;
+        top: -500px;
         left: 0;
         width: 100%;
         background-color: white;
@@ -1031,6 +1031,7 @@ body {
         transition: top 0.3s ease;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         border-bottom: 2px solid var(--brand-100);
+        z-index: 999;
     }
 
     .nav-menu .nav-link {
