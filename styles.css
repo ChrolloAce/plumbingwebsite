@@ -1024,6 +1024,10 @@ body {
     .nav-menu > .nav-contact {
         display: none !important;
     }
+    
+    .nav-menu .nav-link[href="contact.html"] {
+        display: none !important;
+    }
 
     .nav-menu {
         position: fixed;
@@ -1216,7 +1220,7 @@ body {
     box-shadow: 0 8px 32px rgba(12, 74, 110, 0.3), 
                 0 4px 16px rgba(12, 74, 110, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
+    z-index: 500;
     animation: float 3s ease-in-out infinite;
     border: 2px solid var(--brand-400);
 }
