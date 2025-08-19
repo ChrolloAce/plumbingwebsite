@@ -18,12 +18,12 @@ body {
 
 /* Color Variables - Olive Green Palette */
 :root {
-    /* Olive Green Palette */
-    --brand-50: #B5B89B;   /* Lichen - light backgrounds/badges */
-    --brand-100: #7E8A6D;  /* Moss Green - section alternates */
-    --brand-200: #546A50;  /* Olive Drab - badges/highlights */
-    --brand-300: #3F4E40;  /* Cypress - hover/secondary */
-    --brand-400: #2B3E34;  /* Forest Green - primary */
+    /* Olive Green Palette - Darker Prominence */
+    --brand-50: #7E8A6D;   /* Moss Green - reduced light usage */
+    --brand-100: #546A50;  /* Olive Drab - section alternates */
+    --brand-200: #3F4E40;  /* Cypress - badges/highlights */
+    --brand-300: #2B3E34;  /* Forest Green - hover/secondary */
+    --brand-400: #1A2B20;  /* Deep Forest Green - primary */
     
     /* Text Colors */
     --text-primary: #0f172a;
@@ -105,12 +105,13 @@ body {
 .section-badge {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: var(--brand-50);
-    color: var(--brand-400);
+    background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
+    color: white;
     font-size: 0.875rem;
     font-weight: 500;
     border-radius: 2rem;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(26, 43, 32, 0.2);
 }
 
 /* Typography */
@@ -134,16 +135,21 @@ body {
     margin-bottom: 4rem;
 }
 
-/* Navigation */
+/* Navigation - Liquid Glass Effect */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #e2e8f0;
+    background: linear-gradient(135deg, rgba(26, 43, 32, 0.15) 0%, rgba(63, 78, 64, 0.1) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(26, 43, 32, 0.1), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(26, 43, 32, 0.1);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-container {
@@ -188,25 +194,34 @@ body {
 }
 
 .nav-link {
-    color: var(--text-secondary);
+    color: var(--brand-400);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    text-shadow: 0 1px 2px rgba(26, 43, 32, 0.1);
 }
 
 .nav-link:hover {
     color: var(--brand-300);
+    text-shadow: 0 2px 4px rgba(26, 43, 32, 0.2);
 }
 
 .nav-contact {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--brand-400);
+    color: white;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    background-color: var(--bg-gray-50);
+    background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
     border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(26, 43, 32, 0.3);
+    transition: all 0.2s ease;
+}
+
+.nav-contact:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(26, 43, 32, 0.4);
 }
 
 .nav-toggle {
@@ -319,7 +334,7 @@ body {
 .service-icon {
     width: 4rem;
     height: 4rem;
-    background-color: var(--brand-200);
+    background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
     border-radius: 1rem;
     display: flex;
     align-items: center;
@@ -327,6 +342,7 @@ body {
     margin: 0 auto 1.5rem;
     color: white;
     font-size: 1.5rem;
+    box-shadow: 0 8px 24px rgba(26, 43, 32, 0.2);
 }
 
 .service-title {
@@ -444,7 +460,7 @@ body {
 }
 
 .feature-check {
-    color: var(--brand-200);
+    color: var(--brand-400);
     font-size: 1.125rem;
 }
 
@@ -484,7 +500,7 @@ body {
 .service-icon-large {
     width: 5rem;
     height: 5rem;
-    background-color: var(--brand-200);
+    background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
     border-radius: 1rem;
     display: flex;
     align-items: center;
@@ -492,6 +508,7 @@ body {
     margin: 0 auto 2rem;
     color: white;
     font-size: 2rem;
+    box-shadow: 0 10px 30px rgba(26, 43, 32, 0.25);
 }
 
 .services-cta {
@@ -1033,6 +1050,86 @@ body {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Floating Phone Button */
+.floating-phone {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(26, 43, 32, 0.3), 
+                0 4px 16px rgba(26, 43, 32, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-phone:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(26, 43, 32, 0.4), 
+                0 6px 20px rgba(26, 43, 32, 0.3);
+}
+
+.floating-phone:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.floating-phone::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--brand-300) 0%, var(--brand-200) 100%);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-phone:hover::before {
+    opacity: 1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Responsive floating button */
+@media (max-width: 768px) {
+    .floating-phone {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-phone {
+        bottom: 1rem;
+        right: 1rem;
+        width: 52px;
+        height: 52px;
+        font-size: 1.2rem;
+    }
 }
 
 /* Smooth scroll offset for fixed navbar */
