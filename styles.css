@@ -16,14 +16,14 @@ body {
     overflow-x: hidden;
 }
 
-/* Color Variables - Olive Green Palette */
+/* Color Variables - Professional Blue Palette */
 :root {
-    /* Olive Green Palette - Darker Prominence */
-    --brand-50: #7E8A6D;   /* Moss Green - reduced light usage */
-    --brand-100: #546A50;  /* Olive Drab - section alternates */
-    --brand-200: #3F4E40;  /* Cypress - badges/highlights */
-    --brand-300: #2B3E34;  /* Forest Green - hover/secondary */
-    --brand-400: #1A2B20;  /* Deep Forest Green - primary */
+    /* Professional Blue Palette */
+    --brand-50: #E0F2FE;   /* Sky Blue - light backgrounds */
+    --brand-100: #7DD3FC;  /* Light Blue - section alternates */
+    --brand-200: #0EA5E9;  /* Sky Blue - badges/highlights */
+    --brand-300: #0284C7;  /* Blue - hover/secondary */
+    --brand-400: #0C4A6E;  /* Deep Blue - primary */
     
     /* Text Colors */
     --text-primary: #0f172a;
@@ -113,7 +113,7 @@ body {
     font-weight: 600;
     border-radius: 0;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 12px rgba(26, 43, 32, 0.2);
+    box-shadow: 0 4px 12px rgba(12, 74, 110, 0.2);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -175,14 +175,16 @@ body {
     color: var(--text-primary);
 }
 
-.logo-chip {
-    width: 2.5rem;
+.logo-image {
     height: 2.5rem;
-    background-color: var(--brand-400);
-    border-radius: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo-image {
+    height: 2rem;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -219,13 +221,13 @@ body {
     padding: 0.5rem 1rem;
     background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
     border-radius: 0;
-    box-shadow: 0 4px 12px rgba(26, 43, 32, 0.3);
+    box-shadow: 0 4px 12px rgba(12, 74, 110, 0.3);
     transition: all 0.2s ease;
 }
 
 .nav-contact:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(26, 43, 32, 0.4);
+    box-shadow: 0 6px 16px rgba(12, 74, 110, 0.4);
 }
 
 .nav-toggle {
@@ -293,7 +295,7 @@ body {
 }
 
 .hero-highlight {
-    color: var(--brand-50);
+    color: var(--brand-100);
 }
 
 .hero-subtitle {
@@ -348,7 +350,7 @@ body {
     margin: 0 auto 1.5rem;
     color: white;
     font-size: 1.5rem;
-    box-shadow: 0 8px 24px rgba(26, 43, 32, 0.2);
+    box-shadow: 0 8px 24px rgba(12, 74, 110, 0.2);
 }
 
 .service-title {
@@ -519,7 +521,7 @@ body {
     margin: 0 auto 2rem;
     color: white;
     font-size: 2rem;
-    box-shadow: 0 10px 30px rgba(26, 43, 32, 0.25);
+    box-shadow: 0 10px 30px rgba(12, 74, 110, 0.25);
 }
 
 .services-cta {
@@ -1082,8 +1084,8 @@ body {
     color: white;
     font-size: 1.5rem;
     text-decoration: none;
-    box-shadow: 0 8px 32px rgba(26, 43, 32, 0.3), 
-                0 4px 16px rgba(26, 43, 32, 0.2);
+    box-shadow: 0 8px 32px rgba(12, 74, 110, 0.3), 
+                0 4px 16px rgba(12, 74, 110, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
     animation: float 3s ease-in-out infinite;
@@ -1092,8 +1094,8 @@ body {
 
 .floating-phone:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 40px rgba(26, 43, 32, 0.4), 
-                0 6px 20px rgba(26, 43, 32, 0.3);
+    box-shadow: 0 12px 40px rgba(12, 74, 110, 0.4), 
+                0 6px 20px rgba(12, 74, 110, 0.3);
 }
 
 .floating-phone:active {
