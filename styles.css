@@ -1017,6 +1017,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-contact {
+        display: none;
+    }
+
     .nav-menu {
         position: fixed;
         top: -500px;
