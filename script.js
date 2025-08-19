@@ -55,16 +55,14 @@ class NavigationManager {
 
     handleScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const scrollPercentage = (scrollTop / windowHeight) * 100;
         
-        // Pure transparent liquid glass effect on scroll
-        if (scrollTop > 50) {
-            this.navbar.style.background = 'rgba(255, 255, 255, 0.12)';
-            this.navbar.style.backdropFilter = 'blur(30px) saturate(220%)';
-            this.navbar.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 rgba(255, 255, 255, 0.08)';
+        // Transition to liquid glass at 15% scroll
+        if (scrollPercentage >= 15) {
+            this.navbar.classList.add('scrolled');
         } else {
-            this.navbar.style.background = 'rgba(255, 255, 255, 0.08)';
-            this.navbar.style.backdropFilter = 'blur(25px) saturate(200%)';
-            this.navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.05)';
+            this.navbar.classList.remove('scrolled');
         }
 
         this.lastScrollTop = scrollTop;
