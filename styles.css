@@ -1018,7 +1018,11 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-contact {
-        display: none;
+        display: none !important;
+    }
+    
+    .nav-menu > .nav-contact {
+        display: none !important;
     }
 
     .nav-menu {
@@ -1066,26 +1070,7 @@ body {
         background-color: var(--brand-50);
     }
 
-    .nav-menu .nav-contact {
-        background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
-        color: white;
-        border-radius: 0;
-        padding: 0.75rem 1.5rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-        box-shadow: 0 4px 12px rgba(12, 74, 110, 0.3);
-        transition: all 0.3s ease;
-        border: none;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
 
-    .nav-menu .nav-contact:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 6px 16px rgba(12, 74, 110, 0.4);
-    }
 
     .nav-menu.active {
         top: 4rem;
