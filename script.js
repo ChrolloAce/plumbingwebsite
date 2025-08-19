@@ -56,15 +56,15 @@ class NavigationManager {
     handleScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Enhanced liquid glass effect on scroll
+        // Pure transparent liquid glass effect on scroll
         if (scrollTop > 50) {
-            this.navbar.style.background = 'linear-gradient(135deg, rgba(26, 43, 32, 0.25) 0%, rgba(63, 78, 64, 0.2) 100%)';
-            this.navbar.style.backdropFilter = 'blur(25px) saturate(200%)';
-            this.navbar.style.boxShadow = '0 12px 40px rgba(26, 43, 32, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 rgba(26, 43, 32, 0.2)';
+            this.navbar.style.background = 'rgba(255, 255, 255, 0.12)';
+            this.navbar.style.backdropFilter = 'blur(30px) saturate(220%)';
+            this.navbar.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 rgba(255, 255, 255, 0.08)';
         } else {
-            this.navbar.style.background = 'linear-gradient(135deg, rgba(26, 43, 32, 0.15) 0%, rgba(63, 78, 64, 0.1) 100%)';
-            this.navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
-            this.navbar.style.boxShadow = '0 8px 32px rgba(26, 43, 32, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(26, 43, 32, 0.1)';
+            this.navbar.style.background = 'rgba(255, 255, 255, 0.08)';
+            this.navbar.style.backdropFilter = 'blur(25px) saturate(200%)';
+            this.navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.05)';
         }
 
         this.lastScrollTop = scrollTop;

@@ -51,20 +51,22 @@ body {
     padding: 0 1rem;
 }
 
-/* Button Styles */
+/* Button Styles - Sharp Square Design */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 2rem;
     font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 0.5rem;
+    font-weight: 600;
+    border-radius: 0;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
@@ -108,10 +110,12 @@ body {
     background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
     color: white;
     font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 2rem;
+    font-weight: 600;
+    border-radius: 0;
     margin-bottom: 1rem;
     box-shadow: 0 4px 12px rgba(26, 43, 32, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Typography */
@@ -135,19 +139,19 @@ body {
     margin-bottom: 4rem;
 }
 
-/* Navigation - Liquid Glass Effect */
+/* Navigation - Pure Transparent Liquid Glass Effect */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, rgba(26, 43, 32, 0.15) 0%, rgba(63, 78, 64, 0.1) 100%);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(26, 43, 32, 0.1), 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 rgba(26, 43, 32, 0.1);
+                inset 0 -1px 0 rgba(255, 255, 255, 0.05);
     z-index: 1000;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -175,7 +179,7 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     background-color: var(--brand-400);
-    border-radius: 0.5rem;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,10 +215,10 @@ body {
     align-items: center;
     gap: 0.5rem;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
     padding: 0.5rem 1rem;
     background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
-    border-radius: 0.5rem;
+    border-radius: 0;
     box-shadow: 0 4px 12px rgba(26, 43, 32, 0.3);
     transition: all 0.2s ease;
 }
@@ -253,7 +257,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1609205807107-e8ec2120f9de?w=1920&h=1080&fit=crop');
+    background-image: url('ticktokteam.webp');
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -320,22 +324,24 @@ body {
 .service-card {
     text-align: center;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 0;
     background-color: var(--bg-white);
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
+    border-color: var(--brand-400);
 }
 
 .service-icon {
     width: 4rem;
     height: 4rem;
     background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
-    border-radius: 1rem;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -370,15 +376,17 @@ body {
 }
 
 .project-card {
-    border-radius: 1rem;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
+    border-color: var(--brand-400);
 }
 
 .project-image {
@@ -421,10 +429,12 @@ body {
     color: var(--brand-400);
     border: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
+    border-radius: 0;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .project-btn:hover {
@@ -472,8 +482,9 @@ body {
     width: 100%;
     height: 500px;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: 0;
     box-shadow: var(--shadow-lg);
+    border: 3px solid var(--brand-400);
 }
 
 /* Services Section */
@@ -485,9 +496,9 @@ body {
 .service-card-detailed {
     text-align: center;
     padding: 3rem 2rem;
-    border-radius: 1rem;
+    border-radius: 0;
     background-color: var(--bg-white);
-    border: 1px solid #e2e8f0;
+    border: 2px solid #e2e8f0;
     transition: all 0.3s ease;
 }
 
@@ -501,7 +512,7 @@ body {
     width: 5rem;
     height: 5rem;
     background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
-    border-radius: 1rem;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -531,15 +542,17 @@ body {
 .gallery-item {
     position: relative;
     height: 300px;
-    border-radius: 1rem;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .gallery-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
+    border-color: var(--brand-400);
 }
 
 .gallery-item img {
@@ -594,7 +607,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920&h=600&fit=crop');
+    background-image: url('Kitchen-Sink-Installation-Wide-Angle.webp');
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -636,8 +649,8 @@ body {
     margin: 0 auto;
     text-align: center;
     padding: 3rem;
-    border-radius: 1rem;
-    border: 1px solid var(--brand-200);
+    border-radius: 0;
+    border: 2px solid var(--brand-200);
     box-shadow: var(--shadow-md);
 }
 
@@ -758,8 +771,9 @@ body {
 .quote-form-container {
     background-color: white;
     padding: 2.5rem;
-    border-radius: 1rem;
+    border-radius: 0;
     box-shadow: var(--shadow-xl);
+    border: 2px solid var(--brand-100);
 }
 
 .form-title {
@@ -793,10 +807,11 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid var(--brand-200);
-    border-radius: 0.5rem;
+    border: 2px solid var(--brand-200);
+    border-radius: 0;
     font-size: 1rem;
     transition: all 0.2s ease;
+    font-weight: 500;
 }
 
 .form-group input:focus,
@@ -1060,7 +1075,7 @@ body {
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1072,6 +1087,7 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
     animation: float 3s ease-in-out infinite;
+    border: 2px solid var(--brand-400);
 }
 
 .floating-phone:hover {
@@ -1092,7 +1108,7 @@ body {
     right: -2px;
     bottom: -2px;
     background: linear-gradient(135deg, var(--brand-300) 0%, var(--brand-200) 100%);
-    border-radius: 50%;
+    border-radius: 0;
     z-index: -1;
     opacity: 0;
     transition: opacity 0.3s ease;
