@@ -1022,41 +1022,65 @@ body {
         top: -500px;
         left: 0;
         width: 100%;
-        background-color: white;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
         flex-direction: column;
         justify-content: start;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
         padding: 2rem;
         transition: top 0.3s ease;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border-bottom: 2px solid var(--brand-100);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         z-index: 999;
+    }
+
+    .nav-menu.scrolled {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(25px) saturate(200%);
+        -webkit-backdrop-filter: blur(25px) saturate(200%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
     .nav-menu .nav-link {
         color: var(--text-primary);
         font-size: 1rem;
         font-weight: 500;
-        padding: 0.75rem 0;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid var(--brand-50);
-        transition: all 0.3s ease;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        border-radius: 0;
+        border: 1px solid transparent;
     }
 
     .nav-menu .nav-link:hover,
     .nav-menu .nav-link.active {
         color: var(--brand-400);
+        border-color: var(--brand-100);
         background-color: var(--brand-50);
     }
 
     .nav-menu .nav-contact {
-        background-color: var(--brand-400);
+        background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-300) 100%);
         color: white;
         border-radius: 0;
         padding: 0.75rem 1.5rem;
-        margin-top: 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(12, 74, 110, 0.3);
+        transition: all 0.3s ease;
+        border: none;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-menu .nav-contact:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(12, 74, 110, 0.4);
     }
 
     .nav-menu.active {

@@ -61,8 +61,10 @@ class NavigationManager {
         // Transition to liquid glass at 15% scroll
         if (scrollPercentage >= 15) {
             this.navbar.classList.add('scrolled');
+            this.navMenu.classList.add('scrolled');
         } else {
             this.navbar.classList.remove('scrolled');
+            this.navMenu.classList.remove('scrolled');
         }
 
         this.lastScrollTop = scrollTop;
