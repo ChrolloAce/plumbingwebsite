@@ -59,7 +59,7 @@ module.exports = async (req, res) => {
 
         // Send email using Resend
         const { data, error } = await resend.emails.send({
-            from: 'TickTock Plumbing <ernesto@maktubtechnologies.com>',
+            from: 'TickTock Plumbing <ernesto@maktubworkspace.com>',
             to: ['ticktockplumbing@yahoo.com'],
             replyTo: email,
             subject: `New Quote Request: ${service || 'General Inquiry'} - ${firstName} ${lastName}`,
