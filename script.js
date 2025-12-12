@@ -270,12 +270,14 @@ class FormHandler {
             body: JSON.stringify(formData),
         });
 
+        const responseData = await response.json();
+        
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || 'Failed to send quote request');
+            console.error('API Error Details:', responseData);
+            throw new Error(responseData.error || 'Failed to send quote request');
         }
 
-        return response.json();
+        return responseData;
     }
 
     showMessage(message, type) {

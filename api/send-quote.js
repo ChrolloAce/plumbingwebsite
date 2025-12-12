@@ -70,7 +70,8 @@ module.exports = async (req, res) => {
             console.error('Resend error:', error);
             return res.status(500).json({ 
                 success: false, 
-                error: 'Failed to send email' 
+                error: error.message || 'Failed to send email',
+                details: error
             });
         }
 
@@ -81,7 +82,8 @@ module.exports = async (req, res) => {
         console.error('Server error:', error);
         return res.status(500).json({ 
             success: false, 
-            error: 'Internal server error' 
+            error: error.message || 'Internal server error',
+            details: error.toString()
         });
     }
 };
